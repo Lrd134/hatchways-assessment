@@ -3,11 +3,13 @@ import { connect } from 'react-redux';
 class ProfileContainer extends Component {
 
   componentDidMount() {
-    fetch("https://api.hatchways.io/assessment/students").then(
-      resp => resp.json()
-    ).then(
-      json => this.props.getUsers(json)
-    )
+    if (!this.props.users.requesting)
+      this.props.fetchUsers();
+      fetch("https://api.hatchways.io/assessment/students").then(
+        resp => resp.json()
+      ).then(
+        json => this.props.getUsers(json)
+      )
   }
 
   render() {
@@ -24,6 +26,9 @@ const mapDispatchToProps = dispatch => {
   return {
     getUsers: userData => {
       dispatch({type: "GET_USERS", payload: userData })
+    },
+    fetchUsers: () => {
+      dispatch({type: "FETCH"})
     }
   }
 }
