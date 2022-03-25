@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
+import ProfileReducer from './profileReducer';
 import logo from './logo.svg';
 import './App.css';
 const store = compose(
