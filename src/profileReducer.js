@@ -5,7 +5,8 @@ const profileReducer = (state = {
   switch(action.type) {
     case("FETCH"):
       return {...state, requesting: true}
-      break;
+    default:
+      return { ...state, requesting: false }
   }
 };
 
