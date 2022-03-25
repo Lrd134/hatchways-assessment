@@ -4,6 +4,7 @@ import thunk from "redux-thunk";
 import { Provider } from 'react-redux';
 import profileReducer from './profileReducer';
 import logo from './logo.svg';
+import ProfileContainer from './ProfileContainer'
 import './App.css';
 const store = compose(
   applyMiddleware(thunk),

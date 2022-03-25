@@ -27,8 +27,8 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-const mapStateToProps = state =>  {
+const mapStateToProps = state => ({
   users: state.users
-}
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileContainer);
