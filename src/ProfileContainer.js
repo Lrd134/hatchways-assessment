@@ -23,7 +23,7 @@ class ProfileContainer extends Component {
 const mapDispatchToProps = dispatch => {
   return {
     getUsers: userData => {
-      dispatch(userData, {type: "GET_USERS"})
+      dispatch({type: "GET_USERS", payload: userData })
     }
   }
 }
