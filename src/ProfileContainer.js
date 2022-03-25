@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 class ProfileContainer extends Component {
 
   componentDidMount() {
-    if (!this.props.users.requesting)
+    if (!this.props.users.requesting && this.props.users.length === 0)
       this.props.fetchUsers();
       fetch("https://api.hatchways.io/assessment/students").then(
         resp => resp.json()
@@ -15,7 +15,7 @@ class ProfileContainer extends Component {
   render() {
     return (
       <div className="profile container">
-      
+        
       </div>
     )
   }
