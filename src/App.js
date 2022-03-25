@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
+import { Provider } from 'react-redux';
 import profileReducer from './profileReducer';
+import logo from './logo.svg';
+import './App.css';
 const store = compose(
   applyMiddleware(thunk),
   window.__REDUX_DEVTOOLS_EXTENSION__
@@ -11,9 +14,9 @@ const store = compose(
 class App extends Component {
   render() {
     return (
-      <div className="App">
-
-      </div>
+      <Provider store={store}>
+        
+      </Provider>
     );
   }
 }
