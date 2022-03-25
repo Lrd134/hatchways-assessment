@@ -1,4 +1,4 @@
-const ProfileReducer = (state = {
+const profileReducer = (state = {
   users: [],
   requesting: false
 }, action) => {
@@ -9,4 +9,4 @@ const ProfileReducer = (state = {
   }
 };
 
-export default ProfileReducer;
+export default profileReducer;
