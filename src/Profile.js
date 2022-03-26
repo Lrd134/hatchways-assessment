@@ -1,9 +1,9 @@
-/* 
+import React from 'react';
 
-componentDidMount() {
-  fetch("https://api.hatchways.io/assessment/students").then(
-    resp => resp.json()
-  ).then(
-    json => updateUsers(json)
+function Profile({userData}) {
+  return (
+    <div className="profile">
+    
+    </div>
   )
-}*/
+}
