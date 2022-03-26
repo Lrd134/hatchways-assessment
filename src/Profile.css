@@ -3,7 +3,7 @@ div.profile > div.profile {
 }
 div.profile > div.profile.information {
   height: 240px;
-  width: 100%;
+  width: 50%;
   margin-left: 15%;
   border-bottom: none;
   
@@ -21,4 +21,10 @@ div.profile > img {
   top: 50px;
   border: 1px solid black;
   border-radius: 100px;
+}
+img + button.profile {
+  position: relative;
+  left: 80%;
+  width: 12px;
+  height: 3px;
 }

@@ -8,6 +8,7 @@ function Profile({user}) {
   return (
     <div className="profile">
       <img src={user.pic}/>
+      <button className="profile"/>
       <div className="profile information">
       <h1>{user.firstName} {user.lastName}</h1>
       <p>Email: {user.email}</p>
