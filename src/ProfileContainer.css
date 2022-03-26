@@ -9,7 +9,17 @@ div.container {
   margin-right: auto;
 
 }
-div.container::-webkit-scrollbar{ 
-  border: 1px solid black;
+div.container::-webkit-scrollbar{
+  background: white;
+  width: 10px;
+}
+div.container::-webkit-scrollbar-thumb:hover {
   border-radius: 10px;
+  background:rgb(72, 72, 72);
+}
+div.container::-webkit-scrollbar:hover{ 
+  border: 1px solid rgba(0, 0, 0, 0.249);
+
+  border-radius: 10px;
+  color: darkgray;
 }
