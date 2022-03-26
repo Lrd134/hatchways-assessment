@@ -17,6 +17,7 @@ class ProfileContainer extends Component {
     return this.props.users.map(user => (<Profile user={user}/>))
   }
   render() {
+    console.log(this.props)
     return (
       <div className="profile container">
         {this.props.users.length === 0 ? (<p>Please Wait...</p>) : this.renderUsers()}
