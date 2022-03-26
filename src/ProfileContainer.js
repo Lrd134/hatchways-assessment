@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 import Profile from './Profile';
 import './ProfileContainer.css';
 class ProfileContainer extends Component {
-
+  state = {
+    searchTerm: ""
+  }
   componentDidMount() {
     if (!this.props.users.requesting && this.props.users.length === 0)
       this.props.fetchUsers();
@@ -13,14 +15,18 @@ class ProfileContainer extends Component {
         json => this.props.getUsers(json)
       )
   }
-
+  handleSearch = event => {
+    this.setState({
+      searchTerm: event.target.value.toLowerCase()
+    })
+  }
   renderUsers = () => {
-    return this.props.users.map(user => (<Profile user={user}/>))
+    return this.props.users.filter(user => user.firstName.concat(' ', user.lastName).toLowerCase().includes(this.state.searchTerm)).map(user => (<Profile user={user}/>))
   }
   render() {
-    console.log(this.props)
     return (
       <div className="profile container">
+        <input className="profile" type="text" onChange={this.handleSearch}/>
         {this.props.users.length === 0 ? (<p>Please Wait...</p>) : this.renderUsers()}
       </div>
     )
