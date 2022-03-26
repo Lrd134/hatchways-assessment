@@ -8,7 +8,7 @@ div.profile > div.profile.information {
   border-bottom: none;
   
 }
-div.profile > div.profile.information > p{
+div.profile > div.profile.information > p {
   position: relative;
   left: 10%;
 }
