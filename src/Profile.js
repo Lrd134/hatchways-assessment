@@ -8,11 +8,13 @@ function Profile({user}) {
   return (
     <div className="profile">
       <img src={user.pic}/>
+      <div className="profile information">
       <h1>{user.firstName} {user.lastName}</h1>
       <p>Email: {user.email}</p>
       <p>Company: {user.company}</p>
       <p>Skill: {user.skill}</p>
       <p>Average: {avgGrades(user.grades)}</p>
+      </div>
     </div>
   )
 }
