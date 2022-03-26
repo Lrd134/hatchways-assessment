@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import Profile from './Profile';
+import './ProfileContainer.css';
 class ProfileContainer extends Component {
 
   componentDidMount() {

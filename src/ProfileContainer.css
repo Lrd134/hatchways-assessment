@@ -1,3 +1,14 @@
 div.container {
   overflow: scroll;
+  border-radius: 5px;
+  height: 75vw;
+  width: 50vw;
+  margin-top: 5vw;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+div.container::-webkit-scrollbar{ 
+  border: 1px solid black;
+  border-radius: 10px;
 }
