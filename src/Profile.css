@@ -1,5 +1,6 @@
 div.profile > div.profile {
   border-bottom: 1px solid rgba(169, 169, 169, 0.359);
+  height: fit-content;
 }
 div.profile > div.profile.information {
   height: 240px;
@@ -27,4 +28,10 @@ img + button.profile {
   left: 80%;
   width: 12px;
   height: 3px;
+}
+p.grades {
+  margin: auto;
+}
+.tab{
+  margin-left: 40px;
 }
