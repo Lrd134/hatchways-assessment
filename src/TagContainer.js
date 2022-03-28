@@ -7,16 +7,20 @@ class TagContainer extends Component {
   state = {
     renderTagForm: false
   }
-  renderNewTagButton = () => {
 
+  renderNewTagButton = () => {
     return (
-      <button id="tag">New Tag</button>
+      <button onClick={event => {
+        this.setState({renderTagForm: !this.state.renderTagForm})
+      }} id="tag">New Tag</button>
     )
   }
+
   renderNewTagForm = () => (<form>
     <input className="new tag form" type="text"/>
     <input className="new tag form" type="submit"/>
   </form>)
+
   renderTags = () => {
     return this.props.tags.map(tag => {
       <Tag tag={tag}/>
