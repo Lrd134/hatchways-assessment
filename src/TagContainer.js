@@ -20,6 +20,7 @@ class TagContainer extends Component {
   newTag = event => {
     event.preventDefault();
     const tag = {
+      name: this.props.name,
       tag: this.state.tag
     }
     if (this.state.tag !== "") {
