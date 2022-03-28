@@ -22,7 +22,7 @@ function Profile({user}) {
       <p>Company: {user.company}</p>
       <p>Skill: {user.skill}</p>
       <p>Average: {avgGrades(user.grades)}</p>
-      <TagContainer/>
+      <TagContainer tags={user.tags}/>
       </div>
       
       {checked ? (renderGrades()) : null}
