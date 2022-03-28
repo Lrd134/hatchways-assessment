@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import TagContainer from './TagContainer';
 import './Profile.css';
 
 function Profile({user}) {
@@ -21,32 +22,11 @@ function Profile({user}) {
       <p>Company: {user.company}</p>
       <p>Skill: {user.skill}</p>
       <p>Average: {avgGrades(user.grades)}</p>
+      <TagContainer/>
       </div>
       
       {checked ? (renderGrades()) : null}
     </div>
   )
 }
-// {
-//   '0': {
-//     city: 'Fushë-Muhurr',
-//     company: 'Yadel',
-//     email: 'iorton0@imdb.com',
-//     firstName: 'Ingaberg',
-//     grades: [
-//       '78',
-//       '100',
-//       '92',
-//       '86',
-//       '89',
-//       '88',
-//       '91',
-//       '87'
-//     ],
-//     id: '1',
-//     lastName: 'Orton',
-//     pic: 'https://storage.googleapis.com/hatchways-app.appspot.com/assessments/data/frontend/images/voluptasdictablanditiis.jpg',
-//     skill: 'Oracle'
-//   }
-// }
 export default Profile;
