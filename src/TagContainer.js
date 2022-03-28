@@ -1,27 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Tag from './Tag';
 
-function TagContainer({tags}) {
+class TagContainer extends Component {
 
-  const renderTagButton = () => {
+  renderNewTagButton = () => {
     return (
       <button id="tag">New Tag</button>
     )
   }
   
-  const renderTags = () => {
+  renderTags = () => {
     return tags.map(tag => {
       <Tag tag={tag}/>
     })
   }
   
-  return (
-    <div>
-      {tags ? renderTags() : null}
-      {renderTagButton()}
-    </div>
+  render() {
+    return (
+      <div>
+        {tags ? renderTags() : null}
+      </div>
 
-  )
+    ) 
+  }
 
 }
 
