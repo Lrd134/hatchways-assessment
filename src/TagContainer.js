@@ -13,7 +13,10 @@ class TagContainer extends Component {
       <button id="tag">New Tag</button>
     )
   }
-  
+  renderNewTagForm = () => (<form>
+    <input className="new tag form" type="text"/>
+    <input className="new tag form" type="submit"/>
+  </form>)
   renderTags = () => {
     return this.props.tags.map(tag => {
       <Tag tag={tag}/>
@@ -24,6 +27,7 @@ class TagContainer extends Component {
     return (
       <div>
         {this.props.tags ? this.renderTags() : null}
+        {this.state.renderTagForm ? this.renderNewTagForm() : this.renderNewTagButton()}
       </div>
 
     ) 
