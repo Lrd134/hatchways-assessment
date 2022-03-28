@@ -5,7 +5,8 @@ import Tag from './Tag';
 class TagContainer extends Component {
 
   state = {
-    renderTagForm: false
+    renderTagForm: false,
+    tag: ""
   }
 
   renderNewTagButton = () => {
@@ -16,7 +17,19 @@ class TagContainer extends Component {
     )
   }
 
-  renderNewTagForm = () => (<form>
+  newTag = event => {
+    event.preventDefault();
+    const tag = {
+      userId: this.props.user.firstName,
+      tag: this.state.tag
+    }
+    if (this.state.tag !== "")
+      this.props.newTag(tag);
+    else
+      alert("Please enter a tag before submitting.");
+  }
+
+  renderNewTagForm = () => (<form onSubmit={this.newTag}>
     <input className="new tag form" type="text"/>
     <input className="new tag form" type="submit"/>
   </form>)
@@ -46,7 +59,9 @@ class TagContainer extends Component {
 // };
 const mapDispatchToProps = (dispatch) => {
   return ({
-    newTag: tag => dispatch({payload: tag, type:"NEW_TAG"})
+    newTag: tag => {
+      dispatch({payload: tag, type:"NEW_TAG"})
+    }
   });
 };
 
