@@ -27,5 +27,15 @@ class TagContainer extends Component {
 
 }
 
+const mapStateToProps = ({users}) => {
+  return ({
+    users
+  });
+};
+const mapDispatchToProps = (dispatch) => {
+  return ({
+    newTag: tag => dispatch({payload: tag, type:"NEW_TAG"})
+  });
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(TagContainer);
