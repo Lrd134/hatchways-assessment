@@ -4,14 +4,18 @@ import Tag from './Tag';
 
 class TagContainer extends Component {
 
+  state = {
+    renderTagForm: false
+  }
   renderNewTagButton = () => {
+
     return (
       <button id="tag">New Tag</button>
     )
   }
   
   renderTags = () => {
-    return tags.map(tag => {
+    return this.props.tags.map(tag => {
       <Tag tag={tag}/>
     })
   }
@@ -19,7 +23,7 @@ class TagContainer extends Component {
   render() {
     return (
       <div>
-        {tags ? renderTags() : null}
+        {this.props.tags ? this.renderTags() : null}
       </div>
 
     ) 
