@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Tag from './Tag';
 
 class TagContainer extends Component {
@@ -27,4 +28,4 @@ class TagContainer extends Component {
 }
 
 
-export default TagContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(TagContainer);
