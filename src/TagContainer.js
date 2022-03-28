@@ -20,7 +20,6 @@ class TagContainer extends Component {
   newTag = event => {
     event.preventDefault();
     const tag = {
-      userId: this.props.user.firstName,
       tag: this.state.tag
     }
     if (this.state.tag !== "") {
@@ -30,12 +29,21 @@ class TagContainer extends Component {
         renderTagForm: false
       })
     }
-    else
+    else {
       alert("Please enter a tag before submitting.");
+    }
+      
+    
+  }
+
+  handleChange = event => {
+    this.setState({
+      tag: event.target.value
+    })
   }
 
   renderNewTagForm = () => (<form onSubmit={this.newTag}>
-    <input className="new tag form" type="text"/>
+    <input onChange={this.handleChange} className="new tag form" type="text"/>
     <input className="new tag form" type="submit"/>
   </form>)
 
