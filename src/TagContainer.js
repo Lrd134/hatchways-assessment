@@ -23,8 +23,13 @@ class TagContainer extends Component {
       userId: this.props.user.firstName,
       tag: this.state.tag
     }
-    if (this.state.tag !== "")
+    if (this.state.tag !== "") {
       this.props.newTag(tag);
+      this.setState({
+        tag: "",
+        renderTagForm: false
+      })
+    }
     else
       alert("Please enter a tag before submitting.");
   }
