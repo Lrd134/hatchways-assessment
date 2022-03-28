@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Tag from './Tag';
 
 function TagContainer({tags}) {
 
@@ -9,9 +9,15 @@ function TagContainer({tags}) {
     )
   }
   
+  const renderTags = () => {
+    return tags.map(tag => {
+      <Tag tag={tag}/>
+    })
+  }
+  
   return (
     <div>
-      
+      {tags ? renderTags() : null}
       {renderTagButton()}
     </div>
 
