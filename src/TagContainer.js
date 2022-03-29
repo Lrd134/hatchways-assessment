@@ -44,6 +44,12 @@ class TagContainer extends Component {
   }
 
   renderNewTagForm = () => (<form onSubmit={this.newTag}>
+    <button onClick={event => {
+      event.preventDefault()
+      this.setState({
+        renderTagForm: !this.state.renderTagForm
+      })
+    }}>X</button>
     <input value={this.state.tag} onChange={this.handleChange} className="new tag form" type="text"/>
     <input className="new tag form" type="submit"/>
   </form>)
@@ -53,7 +59,7 @@ class TagContainer extends Component {
   render() {
     return (
       <div>
-        {this.props.tags ? this.renderTags() : null}
+        {this.props.tags.length > 1 ? this.renderTags() : null}
         {this.state.renderTagForm ? this.renderNewTagForm() : this.renderNewTagButton()}
       </div>
 

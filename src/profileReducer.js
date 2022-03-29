@@ -5,17 +5,17 @@ const profileReducer = (state = {
   switch(action.type) {
     case("FETCH"):
       return {...state, requesting: true}
-    case("GET_USERS"):
+    case("GET_USERS"): {
+      for (let profile of action.payload.students) {
+        profile.tags = [];
+      }
       return { ...state, users: action.payload.students, requesting: false}
+    }
     case("NEW_TAG"): {
       for (let profile of state.users) {
-        function noTags() {
-          profile.tags = []
+        if (profile.firstName === action.payload.name)
           profile.tags.push(action.payload.tag)
-        }
-        if (profile.firstName === action.payload.name) {
-          profile.tags !== undefined ? profile.tags.push(action.payload.tag) : noTags();
-        }
+        
       }
       return {...state, requesting: false}
     }
