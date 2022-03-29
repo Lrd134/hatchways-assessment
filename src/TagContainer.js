@@ -19,11 +19,11 @@ class TagContainer extends Component {
 
   newTag = event => {
     event.preventDefault();
-    const tag = {
-      name: this.props.name,
-      tag: this.state.tag
-    }
     if (this.state.tag !== "") {
+      const tag = {
+        name: this.props.name,
+        tag: this.state.tag
+      }
       this.props.newTag(tag);
       this.setState({
         tag: "",
@@ -44,15 +44,11 @@ class TagContainer extends Component {
   }
 
   renderNewTagForm = () => (<form onSubmit={this.newTag}>
-    <input onChange={this.handleChange} className="new tag form" type="text"/>
+    <input value={this.state.tag} onChange={this.handleChange} className="new tag form" type="text"/>
     <input className="new tag form" type="submit"/>
   </form>)
 
-  renderTags = () => {
-    return this.props.tags.map(tag => {
-      <Tag tag={tag}/>
-    })
-  }
+  renderTags = () => this.props.tags.map(tag => (<Tag tag={tag}/>))
   
   render() {
     return (
