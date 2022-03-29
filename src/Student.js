@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import TagContainer from './TagContainer';
 import './Student.css';
 
-function Student({user}) {
+function Student({student}) {
   const avgGrades = gradeArr => (gradeArr.reduce((prevVal, currVal) =>
     parseFloat(prevVal) + parseFloat(currVal)) / gradeArr.length).toFixed(2)
   let [checked, setChecked] = useState(false);
@@ -10,19 +10,19 @@ function Student({user}) {
     event.preventDefault();
     setChecked(!checked);
   }
-  const renderGrades = () => user.grades.map((grade, index) => (<p className="grades">Test {index + 1}:<span className="tab"></span>{grade}%</p>))
+  const renderGrades = () => student.grades.map((grade, index) => (<p className="grades">Test {index + 1}:<span className="tab"></span>{grade}%</p>))
   return (
     <div className="student">
-      <img src={user.pic}/>
+      <img src={student.pic}/>
       <button className="student" onClick={onCheck}/>
       
       <div className="student information">
-      <h1>{user.firstName} {user.lastName}</h1>
-      <p>Email: {user.email}</p>
-      <p>Company: {user.company}</p>
-      <p>Skill: {user.skill}</p>
-      <p>Average: {avgGrades(user.grades)}</p>
-      <TagContainer tags={user.tags} name={user.firstName}/>
+      <h1>{student.firstName} {student.lastName}</h1>
+      <p>Email: {student.email}</p>
+      <p>Company: {student.company}</p>
+      <p>Skill: {student.skill}</p>
+      <p>Average: {avgGrades(student.grades)}</p>
+      <TagContainer tags={student.tags} name={student.firstName}/>
       </div>
       
       {checked ? (renderGrades()) : null}

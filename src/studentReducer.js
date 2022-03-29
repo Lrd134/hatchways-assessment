@@ -1,18 +1,18 @@
 const studentReducer = (state = {
-  users: [],
+  students: [],
   requesting: false
 }, action) => {
   switch(action.type) {
     case("FETCH"):
       return {...state, requesting: true}
-    case("GET_USERS"): {
+    case("GET_STUDENTS"): {
       for (let student of action.payload.students) {
         student.tags = [];
       }
-      return { ...state, users: action.payload.students, requesting: false}
+      return { ...state, students: action.payload.students, requesting: false}
     }
     case("NEW_TAG"): {
-      for (let student of state.users) {
+      for (let student of state.students) {
         if (student.firstName === action.payload.name)
           student.tags.push(action.payload.tag)
         

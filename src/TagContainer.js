@@ -68,9 +68,9 @@ class TagContainer extends Component {
 
 }
 
-// const mapStateToProps = ({users}) => {
+// const mapStateToProps = ({students}) => {
 //   return ({
-//     users
+//     students
 //   });
 // };
 const mapDispatchToProps = (dispatch) => {

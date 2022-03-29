@@ -7,12 +7,12 @@ class StudentContainer extends Component {
     searchTerm: ""
   }
   componentDidMount() {
-    if (!this.props.users.requesting && this.props.users.length === 0)
-      this.props.fetchUsers();
+    if (!this.props.students.requesting && this.props.students.length === 0)
+      this.props.fetchStudents();
       fetch("https://api.hatchways.io/assessment/students").then(
         resp => resp.json()
       ).then(
-        json => this.props.getUsers(json)
+        json => this.props.getStudents(json)
       )
   }
   handleSearch = event => {
@@ -20,14 +20,14 @@ class StudentContainer extends Component {
       searchTerm: event.target.value.toLowerCase()
     })
   }
-  renderUsers = () => {
-    return this.props.users.filter(user => user.firstName.concat(' ', user.lastName).toLowerCase().includes(this.state.searchTerm)).map(user => (<Student user={user}/>))
+  renderStudents = () => {
+    return this.props.students.filter(student => student.firstName.concat(' ', student.lastName).toLowerCase().includes(this.state.searchTerm)).map(student => (<Student student={student}/>))
   }
   render() {
     return (
       <div className="student container">
         <input className="student" type="text" onChange={this.handleSearch}/>
-        {this.props.users.length === 0 ? (<p>Please Wait...</p>) : this.renderUsers()}
+        {this.props.students.length === 0 ? (<p>Please Wait...</p>) : this.renderStudents()}
       </div>
     )
   }
@@ -36,16 +36,16 @@ class StudentContainer extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getUsers: userData => {
-      dispatch({type: "GET_USERS", payload: userData })
+    getStudents: studentData => {
+      dispatch({type: "GET_STUDENTS", payload: studentData })
     },
-    fetchUsers: () => {
+    fetchStudents: () => {
       dispatch({type: "FETCH"})
     }
   }
 }
 const mapStateToProps = state => ({
-  users: state.users
+  students: state.students
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(StudentContainer);
