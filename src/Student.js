@@ -22,8 +22,9 @@ function Student({student}) {
       <p>Company: {student.company}</p>
       <p>Skill: {student.skill}</p>
       <p>Average: {avgGrades(student.grades)}</p>
-      <TagContainer tags={student.tags} name={student.firstName}/>
       </div>
+      
+      <TagContainer tags={student.tags} name={student.firstName}/>
       
       {checked ? (renderGrades()) : null}
     </div>
