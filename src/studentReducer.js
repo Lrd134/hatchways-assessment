@@ -1,4 +1,4 @@
-const profileReducer = (state = {
+const studentReducer = (state = {
   users: [],
   requesting: false
 }, action) => {
@@ -6,15 +6,15 @@ const profileReducer = (state = {
     case("FETCH"):
       return {...state, requesting: true}
     case("GET_USERS"): {
-      for (let profile of action.payload.students) {
-        profile.tags = [];
+      for (let student of action.payload.students) {
+        student.tags = [];
       }
       return { ...state, users: action.payload.students, requesting: false}
     }
     case("NEW_TAG"): {
-      for (let profile of state.users) {
-        if (profile.firstName === action.payload.name)
-          profile.tags.push(action.payload.tag)
+      for (let student of state.users) {
+        if (student.firstName === action.payload.name)
+          student.tags.push(action.payload.tag)
         
       }
       return {...state, requesting: false}
@@ -24,4 +24,4 @@ const profileReducer = (state = {
   }
 };
 
-export default profileReducer;
+export default studentReducer;

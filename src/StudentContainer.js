@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import Profile from './Profile';
-import './ProfileContainer.css';
-class ProfileContainer extends Component {
+import Student from './Student';
+import './StudentContainer.css';
+class StudentContainer extends Component {
   state = {
     searchTerm: ""
   }
@@ -21,12 +21,12 @@ class ProfileContainer extends Component {
     })
   }
   renderUsers = () => {
-    return this.props.users.filter(user => user.firstName.concat(' ', user.lastName).toLowerCase().includes(this.state.searchTerm)).map(user => (<Profile user={user}/>))
+    return this.props.users.filter(user => user.firstName.concat(' ', user.lastName).toLowerCase().includes(this.state.searchTerm)).map(user => (<Student user={user}/>))
   }
   render() {
     return (
-      <div className="profile container">
-        <input className="profile" type="text" onChange={this.handleSearch}/>
+      <div className="student container">
+        <input className="student" type="text" onChange={this.handleSearch}/>
         {this.props.users.length === 0 ? (<p>Please Wait...</p>) : this.renderUsers()}
       </div>
     )
@@ -48,4 +48,4 @@ const mapStateToProps = state => ({
   users: state.users
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(StudentContainer);
