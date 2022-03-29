@@ -42,25 +42,16 @@ class TagContainer extends Component {
       tag: event.target.value
     })
   }
-
-  renderNewTagForm = () => (<form onSubmit={this.newTag}>
-    <button type="button" onClick={event => {
-      event.preventDefault()
-      this.setState({
-        renderTagForm: !this.state.renderTagForm
-      })
-    }}>X</button>
-    <input value={this.state.tag} onChange={this.handleChange} className="new tag form" type="text"/>
-    <button className="new tag form" type="submit">Submit</button>
-  </form>)
-
+  
   renderTags = () => this.props.tags.map(tag => (<Tag tag={tag}/>))
   
   render() {
     return (
       <div>
         {this.props.tags.length >= 1 ? this.renderTags() : null}
-        {this.state.renderTagForm ? this.renderNewTagForm() : this.renderNewTagButton()}
+        <form onSubmit={this.newTag}>
+          <input value={this.state.tag} onChange={this.handleChange} className="new tag form" type="text"/>
+        </form>
       </div>
 
     ) 
