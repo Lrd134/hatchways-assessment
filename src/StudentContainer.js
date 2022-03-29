@@ -26,8 +26,16 @@ class StudentContainer extends Component {
       tagTerm: event.target.value.toLowerCase()
     })
   }
+
+  ifSearchingTag = (student) => {
+    if (this.state.tagTerm === "")
+      return true;
+    return student.tags.filter(tag => tag.toLowerCase().includes(this.state.tagTerm)).length >= 1 ? true : false
+  }
+
   renderStudents = () => {
-    return this.props.students.filter(student => student.firstName.concat(' ', student.lastName).toLowerCase().includes(this.state.studentTerm)).map(student => (<Student student={student}/>))
+    return this.props.students.filter(student => student.firstName.concat(' ', student.lastName).toLowerCase().includes(this.state.studentTerm) && 
+    this.ifSearchingTag(student)).map(student => (<Student student={student}/>))
   }
   render() {
     return (
