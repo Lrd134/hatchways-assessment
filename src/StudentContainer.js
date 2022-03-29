@@ -4,7 +4,8 @@ import Student from './Student';
 import './StudentContainer.css';
 class StudentContainer extends Component {
   state = {
-    searchTerm: ""
+    studentTerm: "",
+    tagTerm: ""
   }
   componentDidMount() {
     if (!this.props.students.requesting && this.props.students.length === 0)
@@ -15,18 +16,24 @@ class StudentContainer extends Component {
         json => this.props.getStudents(json)
       )
   }
-  handleSearch = event => {
+  studentSearch = event => {
     this.setState({
-      searchTerm: event.target.value.toLowerCase()
+      studentTerm: event.target.value.toLowerCase()
+    })
+  }
+  tagSearch = event => {
+    this.setState({
+      tagTerm: event.target.value.toLowerCase()
     })
   }
   renderStudents = () => {
-    return this.props.students.filter(student => student.firstName.concat(' ', student.lastName).toLowerCase().includes(this.state.searchTerm)).map(student => (<Student student={student}/>))
+    return this.props.students.filter(student => student.firstName.concat(' ', student.lastName).toLowerCase().includes(this.state.studentTerm)).map(student => (<Student student={student}/>))
   }
   render() {
     return (
       <div className="student container">
-        <input className="student" type="text" onChange={this.handleSearch}/>
+        <input className="student" type="text" onChange={this.studentSearch}/>
+        <input className="tag" type="text" onChange={this.tagSearch}/>
         {this.props.students.length === 0 ? (<p>Please Wait...</p>) : this.renderStudents()}
       </div>
     )
