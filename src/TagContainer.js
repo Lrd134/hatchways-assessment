@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Tag from './Tag';
-
+import './TagContainer.css';
 class TagContainer extends Component {
 
   state = {
@@ -50,7 +50,7 @@ class TagContainer extends Component {
       <div>
         {this.props.tags.length >= 1 ? this.renderTags() : null}
         <form onSubmit={this.newTag}>
-          <input value={this.state.tag} onChange={this.handleChange} className="new tag form" type="text"/>
+          <input placeholder="Add a tag" value={this.state.tag} onChange={this.handleChange} className="new tag form" type="text"/>
         </form>
       </div>
 

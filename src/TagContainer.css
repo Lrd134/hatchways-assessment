@@ -1,0 +1,14 @@
+
+input[type="text"].new.tag.form:focus, input[type="text"].new.tag.form:focus {
+  outline: none;
+  border-bottom: 1px solid black;
+}
+input[type="text"].new.tag.form, input[type="text"].new.tag.form {
+  height: 5%;
+  padding: 1%;
+  width: 10%;
+  font-size: large;
+  border: none;
+  border-bottom: 1px solid rgba(163, 163, 163, 0.286);
+  margin-bottom: 30px;
+}
