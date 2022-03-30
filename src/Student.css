@@ -13,6 +13,13 @@ div.student > div.student.information > p {
   position: relative;
   left: 10%;
 }
+
+input[type="image"].student {
+  width: 64px;
+  height: 64px;
+  float: right;
+}
+
 div.student > img {
   margin-left: 2%;
   height: 100%;

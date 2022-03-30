@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import TagContainer from './TagContainer';
 import './Student.css';
-
+import minus from './grey_minus.png';
+import plus from './grey_plus.png';
 function Student({student}) {
   const avgGrades = gradeArr => (gradeArr.reduce((prevVal, currVal) =>
     parseFloat(prevVal) + parseFloat(currVal)) / gradeArr.length).toFixed(2)
@@ -14,7 +15,7 @@ function Student({student}) {
   return (
     <div className="student">
       <img src={student.pic}/>
-      <button className="student" onClick={onCheck}/>
+      <input alt={checked ? "minus" : "plus"} type="image" src={checked ? minus : plus} className="student" onClick={onCheck}/>
       
       <div className="student information">
       <h1>{student.firstName} {student.lastName}</h1>
@@ -24,9 +25,10 @@ function Student({student}) {
       <p>Average: {avgGrades(student.grades)}</p>
       </div>
       
-      <TagContainer tags={student.tags} name={student.firstName}/>
       
       {checked ? (renderGrades()) : null}
+      
+      <TagContainer tags={student.tags} name={student.firstName}/>
     </div>
   )
 }
