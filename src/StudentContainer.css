@@ -13,23 +13,14 @@ div.container {
 div.profiles {
   overflow-y: scroll;
   overflow-x: hidden;
-  height: fill;
+  height: 84%;
 }
 
-div.profiles::-webkit-scrollbar:active{
-  background: rgb(0, 0, 0);
-  margin-top: 5px;
-  margin-bottom: 5px;
-  width: 10px;
-  border-radius: 10px;
+div.profiles::-webkit-scrollbar {
+  background: none;
 }
-div.profiles::-webkit-scrollbar-thumb:hover {
-  border-radius: 10px;
-  background:rgb(72, 72, 72);
-}
-div.profiles::-webkit-scrollbar:hover{ 
-  border: 1px solid rgba(0, 0, 0, 0.249);
 
+div.profiles::-webkit-scrollbar-thumb {
+  background: grey;
   border-radius: 10px;
-  color: darkgray;
 }
