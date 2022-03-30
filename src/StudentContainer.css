@@ -1,27 +1,35 @@
 div.container {
-  overflow-y: scroll;
   overflow-x: hidden;
+  overflow-y: hidden;
   border: 1px solid rgba(69, 69, 69, 0.05);
-  border-radius: 5px;
-  height: 45vw;
-  width: 50vw;
-  margin-top: 5vw;
+  border-radius: 20px;
+  height: 43vw;
+  width: 65vw;
+  margin-top: 4vw;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0px 0px 10px 5px rgba(86, 86, 86, 0.242);
 }
-div.container::-webkit-scrollbar{
-  background: white;
-  width: 10px;
+div.profiles {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: fill;
 }
-div.container::-webkit-scrollbar-thumb:hover {
+
+div.profiles::-webkit-scrollbar:active{
+  background: rgb(0, 0, 0);
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 10px;
+  border-radius: 10px;
+}
+div.profiles::-webkit-scrollbar-thumb:hover {
   border-radius: 10px;
   background:rgb(72, 72, 72);
 }
-div.container::-webkit-scrollbar:hover{ 
+div.profiles::-webkit-scrollbar:hover{ 
   border: 1px solid rgba(0, 0, 0, 0.249);
 
   border-radius: 10px;
   color: darkgray;
 }
-

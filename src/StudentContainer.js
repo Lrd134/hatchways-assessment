@@ -42,7 +42,9 @@ class StudentContainer extends Component {
       <div className="student container">
         <input className="student" placeholder="Search by name" type="text" onChange={this.studentSearch}/>
         <input className="tagSearch" placeholder="Search by tag" type="text" onChange={this.tagSearch}/>
-        {this.props.students.length === 0 ? (<p>Please Wait...</p>) : this.renderStudents()}
+        <div className="student profiles">
+          {this.props.students.length === 0 ? (<p>Please Wait...</p>) : this.renderStudents()}
+        </div>
       </div>
     )
   }

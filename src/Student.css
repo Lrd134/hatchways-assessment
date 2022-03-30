@@ -1,13 +1,17 @@
 div.student > div.student {
   border-bottom: 1px solid rgba(169, 169, 169, 0.359);
-  height: fit-content;
 }
 div.student > div.student.information {
-  height: 240px;
+  height: 75%;
   width: 50%;
   margin-left: 15%;
   border-bottom: none;
   
+}
+
+div.student > div.student.information > p:last-child {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 div.student > div.student.information > p {
   position: relative;
@@ -32,7 +36,6 @@ input[type="image"].student {
   height: 64px;
   float: right;
 }
-
 div.student > img {
   margin-left: 2%;
   height: 100%;
@@ -43,8 +46,13 @@ div.student > img {
   border: 1px solid black;
   border-radius: 100px;
 }
+.tag {
+  position: relative;
+  left: 20%;
+}
 p.grades {
-  margin: auto;
+  position: relative;
+  left: 20%;
 }
 .tab{
   margin-left: 40px;
