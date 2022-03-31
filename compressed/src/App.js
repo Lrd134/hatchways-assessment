@@ -3,7 +3,6 @@ import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import { Provider } from 'react-redux';
 import studentReducer from './studentReducer';
-import logo from './logo.svg';
 import StudentContainer from './StudentContainer'
 import './App.css';
 const store = compose(

@@ -14,7 +14,7 @@ function Student({student}) {
   const renderGrades = () => student.grades.map((grade, index) => (<p className="grades">Test {index + 1}:<span className="tab"></span>{grade}%</p>))
   return (
     <div className="student">
-      <img src={student.pic}/>
+      <img alt={`${student.firstNames}'s Face`}src={student.pic}/>
       <input alt={checked ? "minus" : "plus"} type="image" src={checked ? minus : plus} className="student" onClick={onCheck}/>
       
       <div className="student information">
