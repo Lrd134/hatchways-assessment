@@ -46,8 +46,7 @@ div.student > img {
   border-radius: 100px;
 }
 .tag {
-  position: relative;
-  left: 20%;
+  margin-left: 27%;
 }
 p.grades {
   position: relative;
