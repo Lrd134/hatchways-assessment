@@ -50,7 +50,8 @@ div.student > img {
 }
 p.grades {
   position: relative;
-  left: 20%;
+  left: 28%;
+  margin: auto;
 }
 .tab{
   margin-left: 40px;
