@@ -4,7 +4,7 @@ div.student > div.student {
 div.student > div.student.information {
   height: 75%;
   width: 50%;
-  margin-left: 15%;
+  margin-left: 25%;
   border-bottom: none;
   
 }
@@ -15,7 +15,7 @@ div.student > div.student.information > p:last-child {
 }
 div.student > div.student.information > p {
   position: relative;
-  left: 10%;
+  left: 5%;
 }
 input[type="text"].tagSearch:focus, input[type="text"].student:focus {
   outline: none;
