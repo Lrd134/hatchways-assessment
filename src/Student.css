@@ -5,15 +5,15 @@ div.student > div.student.information {
   height: 75%;
   width: 50%;
   margin-left: 25%;
+  margin-bottom: 15px;
   border-bottom: none;
   
 }
-
-div.student > div.student.information > p:last-child {
-  margin-bottom: 0px;
-  padding-bottom: 0px;
+div.student > div.student.information > p:last-of-type {
+  margin-bottom: 3px;
 }
 div.student > div.student.information > p {
+  margin: 5px;
   position: relative;
   left: 5%;
 }
@@ -46,12 +46,20 @@ div.student > img {
   border-radius: 100px;
 }
 .tag {
-  margin-left: 27%;
+  display: block;
+  margin-left: 28%;
+}
+p.grades:first-of-type {
+  margin-top: 30px;
 }
 p.grades {
   position: relative;
   left: 28%;
+  display: block;
   margin: auto;
+}
+p.grades:last-of-type{
+  margin-bottom: 10px;
 }
 .tab{
   margin-left: 40px;
