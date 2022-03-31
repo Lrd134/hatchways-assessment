@@ -24,10 +24,10 @@ function Student({student}) {
       <p>Skill: {student.skill}</p>
       <p>Average: {avgGrades(student.grades)}</p>
       </div>
-      
-      
+      <br></br>
+      <div className="grades">
       {checked ? (renderGrades()) : null}
-      
+      </div>
       <TagContainer tags={student.tags} name={student.firstName}/>
     </div>
   )

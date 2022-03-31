@@ -4,14 +4,11 @@ div.student > div.student {
 div.student > div.student.information {
   height: 75%;
   width: 50%;
-  margin-left: 25%;
-  margin-bottom: 15px;
+  margin-left: 20%;
   border-bottom: none;
   
 }
-div.student > div.student.information > p:last-of-type {
-  margin-bottom: 3px;
-}
+
 div.student > div.student.information > p {
   margin: 5px;
   position: relative;
@@ -38,23 +35,19 @@ input[type="image"].student {
 div.student > img {
   margin-left: 2%;
   height: 100%;
-  width: 15%;
+  width: 11%;
   float: left;
   position: relative;
   top: 10px;
   border: 1px solid black;
   border-radius: 100px;
 }
-.tag {
-  display: block;
-  margin-left: 28%;
-}
-p.grades:first-of-type {
-  margin-top: 30px;
+input.tag, .tag:first-of-type {
+  margin-left: 23%;
 }
 p.grades {
   position: relative;
-  left: 28%;
+  left: 23%;
   display: block;
   margin: auto;
 }
