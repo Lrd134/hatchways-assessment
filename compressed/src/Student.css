@@ -1,0 +1,59 @@
+div.student > div.student {
+  border-bottom: 1px solid rgba(169, 169, 169, 0.359);
+}
+div.student > div.student.information {
+  height: 75%;
+  width: 50%;
+  margin-left: 20%;
+  border-bottom: none;
+  
+}
+
+div.student > div.student.information > p {
+  margin: 5px;
+  position: relative;
+  left: 5%;
+}
+input[type="text"].tagSearch:focus, input[type="text"].student:focus {
+  outline: none;
+  border-bottom: 1px solid black;
+}
+input[type="text"].tagSearch, input[type="text"].student {
+  height: 5%;
+  padding: 1%;
+  width: 96%;
+  font-size: xx-large;
+  border: none;
+  border-bottom: 1px solid rgba(163, 163, 163, 0.286);
+  margin-left: 1%;
+}
+input[type="image"].student {
+  width: 64px;
+  height: 64px;
+  float: right;
+}
+div.student > img {
+  margin-left: 2%;
+  height: 100%;
+  width: 11%;
+  float: left;
+  position: relative;
+  top: 10px;
+  border: 1px solid black;
+  border-radius: 100px;
+}
+input.tag, .tag:first-of-type {
+  margin-left: 23%;
+}
+p.grades {
+  position: relative;
+  left: 23%;
+  display: block;
+  margin: auto;
+}
+p.grades:last-of-type{
+  margin-bottom: 10px;
+}
+.tab{
+  margin-left: 40px;
+}

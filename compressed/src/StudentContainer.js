@@ -35,7 +35,7 @@ class StudentContainer extends Component {
 
   renderStudents = () => {
     return this.props.students.filter(student => student.firstName.concat(' ', student.lastName).toLowerCase().includes(this.state.studentTerm) && 
-    this.ifSearchingTag(student)).map(student => (<li key={student.firstName}><Student student={student}/></li>))
+    this.ifSearchingTag(student)).map(student => (<Student student={student}/>))
   }
   render() {
     return (
@@ -43,9 +43,7 @@ class StudentContainer extends Component {
         <input className="student" placeholder="Search by name" type="text" onChange={this.studentSearch}/>
         <input className="tagSearch" placeholder="Search by tag" type="text" onChange={this.tagSearch}/>
         <div className="student profiles">
-          <ul>
           {this.props.students.length === 0 ? (<p>Please Wait...</p>) : this.renderStudents()}
-          </ul>
         </div>
       </div>
     )
